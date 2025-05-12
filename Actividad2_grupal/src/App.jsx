@@ -1,35 +1,28 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import './App.css';
+
+// Importar las páginas (asegúrate de tener estas vistas creadas)
+import Activities from './pages/Activities';
+import ActivityDetail from './pages/ActivityDetail';
+
+
+// Importar componentes comunes (como Navbar)
+import Navbar from './components/Navbar';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <Router>
+      <Navbar /> {/* Aquí se mostrará la barra de navegación en todas las páginas */}
+      <div className="page-content">
+        <Routes>
+          {/* Define las rutas de la aplicación */}
+          <Route path="/actividades" element={<Activities />} />
+          <Route path="/actividad/:id" element={<ActivityDetail />} />
+        </Routes>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </Router>
+  );
 }
 
-export default App
+export default App;
