@@ -1,103 +1,114 @@
-/* styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
-/* Colores */
 :root {
-  --verde-bosque: #2E8B57;
-  --azul-cielo: #87CEEB;
-  --naranja-calido: #FFA500;
-  --fondo-claro: #F5F5F5;
-  --texto-principal: #222222;
-  --texto-secundario: #666666;
+  --color-primario: #2E8B57;
+  --color-secundario: #87CEEB;
+  --color-acento: #FFA500;
+  --color-fondo: #F5F5F5;
+  --color-texto: #222222;
+  --color-texto-secundario: #666666;
 }
 
-/* Estilo global */
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: var(--fondo-claro);
-  color: var(--texto-principal);
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
   margin: 0;
   padding: 0;
+  line-height: 1.6;
 }
 
-/* Navbar */
-.navbar {
-  background-color: var(--verde-bosque);
-  color: white;
-  padding: 10px 20px;
-  position: fixed;
-  width: 100%;
+nav {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1.25rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
   top: 0;
-  left: 0;
-  z-index: 10;
+  z-index: 1000;
 }
 
-.navbar a {
-  color: white;
+nav a {
+  color: var(--color-primario);
   text-decoration: none;
-  margin-right: 20px;
+  margin-right: 1rem;
   font-weight: 600;
 }
 
-.navbar a:hover {
-  color: var(--azul-cielo);
+nav a:hover {
+  color: var(--color-acento);
+  text-decoration: underline;
 }
 
-/* Botones */
-.button-primary {
-  background-color: var(--verde-bosque);
+nav span {
+  font-weight: 600;
+  color: var(--color-texto);
+}
+
+button {
+  background-color: var(--color-primario);
   color: white;
-  padding: 12px 20px;
+  padding: 0.5rem 1.2rem;
   border: none;
-  border-radius: 2rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
   cursor: pointer;
   font-weight: 600;
-  transition: background-color 0.3s;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-.button-primary:hover {
-  background-color: var(--azul-cielo);
+button:hover {
+  background-color: var(--color-acento);
+  transform: scale(1.05);
 }
 
-/* Tarjetas de actividad */
-.activity-card {
+form input[type="email"],
+form input[type="password"] {
+  padding: 0.6rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.75rem;
+  width: 250px;
+  margin-bottom: 1rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+  color: var(--color-texto);
+}
+
+.page-content {
+  padding: 2rem;
+}
+
+.card {
   background-color: white;
   border-radius: 1rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+  margin: 1rem 0;
+  transition: transform 0.2s ease;
 }
 
-.activity-card img {
+.card:hover {
+  transform: scale(1.02);
+}
+
+.card img {
   width: 100%;
-  height: auto;
+  border-radius: 0.75rem;
+  margin-bottom: 1rem;
 }
 
-.activity-card-content {
-  padding: 20px;
+.card .title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
 }
 
-.activity-card h2 {
-  color: var(--texto-principal);
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-}
-
-.activity-card p {
-  color: var(--texto-secundario);
-  font-size: 1rem;
-}
-
-/* Fondo */
-.page {
-  padding-top: 70px; /* Para que no se oculte contenido por la navbar fija */
-}
-
-/* Hover y enlaces */
-a {
-  color: var(--azul-cielo);
-}
-
-a:hover {
-  color: var(--naranja-calido);
+.card .subtitle {
+  color: var(--color-texto-secundario);
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
 }

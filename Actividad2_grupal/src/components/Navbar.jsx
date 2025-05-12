@@ -1,15 +1,24 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { AuthContext } from '../context/AuthContext';
+import logo from '../assets/logo.png';
 
 const Navbar = () => {
-  return (
-    <nav className="navbar">
-      <Link to="/" style={{ fontWeight: 'bold', fontSize: '1.5rem' }}>Logo</Link>
-      <div style={{ float: 'right' }}>
-        <Link to="/login">Login</Link>
-      </div>
-    </nav>
-  );
+    const { user } = useContext(AuthContext);
+
+    return (
+        <nav>
+            <Link to="/"><img src={logo} alt="Logo" style={{ height: '100px', marginRight: '1rem' }} /></Link>
+            <Link to="/activities">Actividades</Link>
+            <Link to="/profile">Perfil</Link>
+            {!user && <Link to="/login">Login</Link>}
+            {user && (
+                <span style={{ marginLeft: 'auto' }}>
+          Bienvenid@ {user.name}
+        </span>
+            )}
+        </nav>
+    );
 };
 
 export default Navbar;
