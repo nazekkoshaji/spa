@@ -1,42 +1,103 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* styles.css */
+
+/* Colores */
+:root {
+  --verde-bosque: #2E8B57;
+  --azul-cielo: #87CEEB;
+  --naranja-calido: #FFA500;
+  --fondo-claro: #F5F5F5;
+  --texto-principal: #222222;
+  --texto-secundario: #666666;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Estilo global */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--fondo-claro);
+  color: var(--texto-principal);
+  margin: 0;
+  padding: 0;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Navbar */
+.navbar {
+  background-color: var(--verde-bosque);
+  color: white;
+  padding: 10px 20px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.navbar a {
+  color: white;
+  text-decoration: none;
+  margin-right: 20px;
+  font-weight: 600;
 }
 
-.card {
-  padding: 2em;
+.navbar a:hover {
+  color: var(--azul-cielo);
 }
 
-.read-the-docs {
-  color: #888;
+/* Botones */
+.button-primary {
+  background-color: var(--verde-bosque);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.button-primary:hover {
+  background-color: var(--azul-cielo);
+}
+
+/* Tarjetas de actividad */
+.activity-card {
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.activity-card img {
+  width: 100%;
+  height: auto;
+}
+
+.activity-card-content {
+  padding: 20px;
+}
+
+.activity-card h2 {
+  color: var(--texto-principal);
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.activity-card p {
+  color: var(--texto-secundario);
+  font-size: 1rem;
+}
+
+/* Fondo */
+.page {
+  padding-top: 70px; /* Para que no se oculte contenido por la navbar fija */
+}
+
+/* Hover y enlaces */
+a {
+  color: var(--azul-cielo);
+}
+
+a:hover {
+  color: var(--naranja-calido);
 }
