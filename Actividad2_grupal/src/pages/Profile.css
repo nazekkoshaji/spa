@@ -1,0 +1,27 @@
+.enlace{
+    margin: 0px 0px 0px 10px;
+    text-decoration: underline;
+    color: var(--color-primario);
+    cursor: pointer;
+}
+.enlace:hover{
+    color: var(--color-acento);
+}
+
+/* estilos del acordeón */
+.accordion-button{
+    border-radius: 0rem !important;
+  }
+  .accordion-button:hover{
+    transform: scale(1.00);
+    color: white;
+  }
+  .accordion-button:not(.collapsed) {
+    color: var(--bs-accordion-active-color);
+    background-color: white !important;
+    box-shadow: inset 0 calc(-1 * var(--bs-accordion-border-width)) 0 rgba(224, 45, 45, 0) !important;
+    border: 2px solid var(--color-acento);
+  }
+  .accordion-button:focus{
+    box-shadow: white !important;
+  }

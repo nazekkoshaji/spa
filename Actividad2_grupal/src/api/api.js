@@ -1,4 +1,4 @@
-const BASE_URL = 'https://mock.apidog.com/m1/873119-854329-default;';
+const BASE_URL = 'https://mock.apidog.com/m1/873119-854329-default';
 
 // Obtener todas las actividades
 export const fetchActivities = async () => {
@@ -39,7 +39,7 @@ export const fetchReservations = async () => {
 export const fetchReservationsByUser = async (userId) => {
   const res = await fetch(`${BASE_URL}/reservations/user/${userId}`);
   if (!res.ok) throw new Error('Error al cargar reservas del usuario');
-  return res.json();
+  return await res.json();
 };
 
 // Crear una nueva reserva

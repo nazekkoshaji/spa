@@ -1,6 +1,7 @@
 import { useContext, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
+import {fetchUsers} from '../api/api';
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -11,28 +12,23 @@ const Login = () => {
     const location = useLocation();
     const from = location.state?.from?.pathname || '/profile';
 
-    const users = [
-        {
-            name: 'Laura Martínez',
-            email: 'laura.martinez@example.com',
-            password: 'LauMtz@2023'
-        },
-        {
-            name: 'Carlos Gómez',
-            email: 'carlos.gomez@example.com',
-            password: 'C4rl0sGomez!'
-        }
-    ];
-
-    const handleLogin = (e) => {
+    const handleLogin = async (e) => {
         e.preventDefault();
+        try{
+        const users= await fetchUsers();
+        console.log('Usuarios', users);
         const user = users.find(u => u.email === email && u.password === password);
         if (user) {
-            login({ name: user.name, email: user.email });
+            console.log('Usuario:', user)
+            login(user);
             navigate(from, { replace: true });
         } else {
             setError('Credenciales incorrectas');
         }
+    }
+    catch(err){
+        setError('Error al obtener usuario');
+    }
     };
 
     return (
