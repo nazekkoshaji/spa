@@ -1,4 +1,3 @@
-import React from 'react';
 import { useFilteredActivities } from '../hooks/useFilteredActivities';
 import ActivityCard from '../components/ActivityCard';
 
@@ -13,7 +12,7 @@ const Activities = () => {
       <h1>Lista de Actividades</h1>
       <div>
         {activities.map((activity) => (
-          <ActivityCard key={activity.id} activity={activity} />
+          <ActivityCard key={activity.activity_id} activity={activity} />
         ))}
       </div>
     </div>

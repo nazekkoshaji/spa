@@ -8,6 +8,10 @@
     color: var(--color-acento);
 }
 
+.spinner-border{
+  color: var(--color-primario);
+}
+
 /* estilos del acordeón */
 .accordion-button{
     border-radius: 0rem !important;

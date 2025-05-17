@@ -6,6 +6,7 @@ import ActivityDetail from './pages/ActivityDetail';
 import Profile from './pages/Profile';
 import Navbar from './components/Navbar';
 import ProtectedRoute from './components/ProtectedRoute';
+import Reserve from './pages/Reserve';
 import './App.css';
 
 function App() {
@@ -15,17 +16,18 @@ function App() {
             <Routes>
                 <Route path="/" element={<Landing />} />
                 <Route path="/login" element={<Login />} />
-                <Route path="/activities" element={
-                    <ProtectedRoute>
-                        <Activities />
-                    </ProtectedRoute>
-                } />
-                <Route path="/actividad/:id" element={<ActivityDetail />} />
+                <Route path="/activities" element={<Activities />} />
+                <Route path="/activities/:id" element={<ActivityDetail />} />
                 <Route path="/profile" element={
                     <ProtectedRoute>
                         <Profile />
                     </ProtectedRoute>
                 } />
+                <Route path="/activities/:id/reserve" element={
+                    <ProtectedRoute>
+                        <Reserve/>
+                    </ProtectedRoute>
+                    }/>
             </Routes>
         </BrowserRouter>
     );

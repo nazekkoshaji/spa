@@ -1,0 +1,33 @@
+.container{
+    display: flex;
+    justify-content: center;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #e5e5e5;
+    padding: 30px 50px;
+}
+.nom_actividad{
+    color: var(--color-primario);
+}
+input{
+    margin: 20px;
+}
+.int_info:focus{ 
+    border: 2px solid var(--color-acento);
+    outline: none; 
+}
+.input_texto{
+    height: 100px;
+    width: 500px;
+}
+.int_info{
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 0 5px 1px rgb(184, 184, 184);
+}
+.boton{
+    margin: 30px;
+}

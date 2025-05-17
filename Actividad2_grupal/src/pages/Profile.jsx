@@ -79,7 +79,7 @@ const Profile = () => {
                   >
                     <Link
                       key={activities[index].activity_id}
-                      to={`/actividad/${activities[index].activity_id}`}
+                      to={`/activities/${activities[index].activity_id}`}
                     >
                       <p className="enlace">Ver detalle de la actividad</p>
                     </Link>

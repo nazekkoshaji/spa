@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { fetchActivities } from "../api/api";
 
 export const useFilteredActivities = () => {
   const [activities, setActivities] = useState([]);
@@ -6,22 +7,18 @@ export const useFilteredActivities = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fetchActivities = async () => {
+    const getActivities = async () => {
+      setLoading(true);
       try {
-        const response = await fetch('https://api.simulada.com/activities');
-        if (!response.ok) {
-          throw new Error('Error fetching activities');
-        }
-        const data = await response.json();
-        setActivities(data);
+        const response = await fetchActivities();
+        setActivities(response);
       } catch (err) {
         setError(err.message);
       } finally {
         setLoading(false);
       }
     };
-
-    fetchActivities();
+    getActivities();
   }, []);
 
   return { activities, loading, error };

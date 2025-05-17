@@ -8,7 +8,7 @@ const ActivityCard = ({ activity }) => {
       <div className="activity-card-content">
         <h2>{activity.name}</h2>
         <p>{activity.description}</p>
-        <Link to={`/actividad/${activity.id}`}>
+        <Link to={`/activities/${activity.activity_id}/reserve`}>
           <button className="button-primary">Ver detalles</button>
         </Link>
       </div>
