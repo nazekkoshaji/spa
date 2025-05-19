@@ -53,7 +53,7 @@ const Profile = () => {
                   aria-expanded="false"
                   aria-controls={`collapse${index}`}
                 >
-                  {activities[index].name} - {reserva.selected_date}
+                  {activities[index].name} - {new Date(reserva.selected_date).toLocaleDateString()}
                 </button>
               </h2>
               <div

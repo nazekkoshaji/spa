@@ -7,7 +7,7 @@ import "./Reserve.css";
 
 const Reserve = () => {
   const { id } = useParams();
-  const { login } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
   const { activity, loading } = useReservas(id);
   const [formData, setFormData] = useState({
     number_of_people: 1,
@@ -19,14 +19,15 @@ const Reserve = () => {
     const reserva = {
       reservation: {
         reservation_id: Math.floor(Math.random() * (100 - 31 + 1)) + 31,
-        user_id: login.user_id,
-        activity_id: id,
+        user_id: user.user_id,
+        activity_id: Number(id),
         number_of_people: data.number_of_people,
         selected_date: data.selected_date,
         reservation_comments: data.reservation_comments,
       },
     };
     await createReservation(reserva);
+    console.log(reserva);
   };
 
   const handleSubmit = async (e) => {
@@ -39,7 +40,6 @@ const Reserve = () => {
       alert("Error al realizar la reserva");
     }
   };
-  console.log(activity);
   if (loading) {
     return (
       <div
@@ -69,7 +69,7 @@ const Reserve = () => {
             }
           >
             {activity[0].available_dates.map((element)=>(
-              <option key={element} value={element}>{element}</option>
+              <option key={element} value={element}>{new Date(element).toLocaleDateString()}</option>
             ))}
           </select>
         </label>

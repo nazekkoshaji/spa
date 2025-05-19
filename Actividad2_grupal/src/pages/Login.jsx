@@ -16,10 +16,8 @@ const Login = () => {
         e.preventDefault();
         try{
         const users= await fetchUsers();
-        console.log('Usuarios', users);
         const user = users.find(u => u.email === email && u.password === password);
         if (user) {
-            console.log('Usuario:', user)
             login(user);
             navigate(from, { replace: true });
         } else {
