@@ -12,7 +12,7 @@ const Landing = () => (
     }}>
         <h1>Outdoor Adventure</h1>
         <p>Descubre experiencias al aire libre y deportivas</p>
-        <Link to="/login">
+        <Link to="/activities">
             <button>Reservar ahora</button>
         </Link>
     </div>

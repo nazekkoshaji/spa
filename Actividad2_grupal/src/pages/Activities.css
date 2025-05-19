@@ -1,0 +1,15 @@
+.filtros{
+    width: 50vw;
+    display: flex;
+    justify-content:space-between ;
+    align-items: center;
+}
+
+.busqueda, .selectorCategoria, .precioMax{
+    width: 30%;
+    height: 35px;
+    padding-left: 10px;
+    border: 1px solid var(--color-primario); 
+    border-radius: 5px;
+    color: var(--color-texto-secundario);
+}
