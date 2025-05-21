@@ -9,6 +9,7 @@ const Navbar = () => {
     return (
         <nav>
             <Link to="/"><img src={logo} alt="Logo" style={{ height: '100px', marginRight: '1rem' }} /></Link>
+            <Link to="/store">Sobre nosotros</Link>
             <Link to="/activities">Actividades</Link>
             <Link to="/profile">Perfil</Link>
             {!user && <Link to="/login">Login</Link>}

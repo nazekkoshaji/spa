@@ -7,6 +7,7 @@ import Profile from './pages/Profile';
 import Navbar from './components/Navbar';
 import ProtectedRoute from './components/ProtectedRoute';
 import Reserve from './pages/Reserve';
+import Store from './pages/Store';
 import './App.css';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
                 <Route path="/login" element={<Login />} />
                 <Route path="/activities" element={<Activities />} />
                 <Route path="/activities/:id" element={<ActivityDetail />} />
+                <Route path="/store" element={<Store />} />
                 <Route path="/profile" element={
                     <ProtectedRoute>
                         <Profile />
